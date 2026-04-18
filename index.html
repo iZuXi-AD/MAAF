@@ -16,18 +16,39 @@
     }
 
     .box {
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
+      background: rgba(0,0,0,0.7);
+      padding: 40px;
+      border-radius: 20px;
+      width: 95%;         /* biar responsive di HP */
+      max-width: 800px;   /* diperbesar */
+    }
+
+    #text {
+      font-size: 28px;     /* sebelumnya kecil */
+      line-height: 1.8;
+      min-height: 150px;   /* biar ga loncat-loncat */
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
     }
 
     button {
-      margin-top: 15px;
-      padding: 10px;
-      border: none;
-      background: pink;
-      cursor: pointer;
+      margin-top: 25px;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 25px;
+    }
+
+    @media (max-width: 600px) {
+      #text {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
