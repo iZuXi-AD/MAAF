@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Untuk Kamu</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-family: sans-serif;
+      background: url('foto.jpg') center/cover;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      border: none;
+      background: pink;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>aku minta maaf...</h2>
+  <p id="text"></p>
+  <button id="btn">klik pelan ya...</button>
+</div>
+
+<audio id="musik" loop playsinline>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const btn = document.getElementById("btn");
+  const audio = document.getElementById("musik");
+  const text = document.getElementById("text");
+
+  const texts = [
+    "aku tau aku banyak salah...",
+    "aku tau aku bikin kamu capek...",
+    "tapi aku masih sayang banget sama kamu...",
+    "aku ga mau kehilangan kamu...",
+    "aku masih di sini buat kamu"
+  ];
+
+  let i = 0;
+  let started = false;
+
+  btn.addEventListener("click", function () {
+
+    // 🔊 mulai musik (fix untuk GitHub + HP)
+    if (!started) {
+      audio.volume = 0.5;
+      audio.play().catch(err => {
+        alert("Audio gagal: " + err);
+      });
+      started = true;
+    }
+
+    // 📝 tampilkan teks
+    text.innerText = texts[i];
+    i++;
+    if (i >= texts.length) i = texts.length - 1;
+  });
+</script>
+
+</body>
+</html>
